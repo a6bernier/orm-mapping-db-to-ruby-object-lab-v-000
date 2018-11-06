@@ -45,7 +45,7 @@ class Student
 
     DB[:conn].execute(sql, grade).map do |row|
       self.new_from_db(row)
-    end
+    end.all
   end
 
   def self.create_table
